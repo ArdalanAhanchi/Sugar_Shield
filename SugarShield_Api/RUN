@@ -1,0 +1,2 @@
+#! /bin/bash
+python3 Predict_Api.py diabetes.csv
