@@ -32,12 +32,19 @@
   }
 
   body {
-      background-image: url("healthy-life-banner.jpg");
+      background-image: url("background.jpg");
   }
 
   #jumbo {
-    style="background-image: url(sugarshield.jpg);"
+    style="background-image: url(background.jpg);"
+  }
 
+  label {
+    font: normal 24px Palatino Header !important;
+    width:250px;
+    display: block;
+    clear: both;
+    padding-left:4px;
   }
 
   .btn {
@@ -60,7 +67,7 @@
   <script>
 $( document ).ready(function() {
   $("#getbmi").click(function(){
-
+    //alert("click");
           var weight = document.getElementById('weight').value;
           var height = document.getElementById('height').value;
           var NumberofChildren = document.getElementById('Number of Children').value;
@@ -74,29 +81,33 @@ $( document ).ready(function() {
           height = height * 0.025; //now height is meter
           var newbmivalue = weight / (height * height);
 
+//get request
+var body = {
+  "Number of Children" : NumberofChildren,
+  "Glucose Level" : GlucoseLevel,
+  "Blood Pressure" : BloodPressure,
+  "Skin Thickness" : SkinThickness,
+  "Insulin" : Insulin,
+  "BMI" : newbmivalue,
+  "Diabetes Pedigree" : DiabetesPedigree};
 
-var xhr = new XMLHttpRequest();
-var url = "http://127.0.0.1:5000/predictdiabetes";
-xhr.open("POST", url, true);
 
+            $.post("demo_test.asp", { body }, function(data, status){
+    alert("Data: " + data + "\nStatus: " + status);
+alert("before get.JSON");
+        $.getJSON( "http://ahanchi.redirectme.net:57575/", function( data ) {
+            alert("within get.JSON");
+            $.each( data, function( key, val ) {
+            items.push( "<li id='" + key + "'>" + val + "</li>" );
+        });
 
-xhr.setRequestHeader("Content-Type", "application/json" );
-xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-        var json = JSON.parse(xhr.responseText);
-        alert(json.Prediction);
-    }
-};
-var data = JSON.stringify({"Pregnancies": NumberofChildren, "Glucose": GlucoseLevel, "BloodPressure" : BloodPressure,"SkinThickness" : SkinThickness,"Insulin" : Insulin,"BMI" : newbmivalue,"Pedigree" : DiabetesPedigree,"Age" : "35"});
-xhr.send(data);
+        $( "<ul/>", {
+          "class": "my-new-list",
+          html: items.join( "" )
+          }).appendTo( "body" );
+        });
 
-alert("Your Result is: ");
-
-//alert("click2");
-
-          //Math.round(newbmivalue);
-          //alert(newbmivalue);
-    //});
+    });
   });
 });
 
