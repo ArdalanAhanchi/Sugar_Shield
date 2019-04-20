@@ -13,9 +13,6 @@
 	<!-- bootstrap code -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-	<!-- CSS Stylesheet -->
-	<link rel="stylesheet" href="stylesheet.css"
-
 	<!-- j query code -->
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -28,20 +25,29 @@
 
 
 	<!-- The document.ready script needs to be in its on <script> each method called from document needs to have the function() within it -->
-	<script>
-		$(document).ready(function() {
+  <script>
+$( document ).ready(function() {
+  $("#getbmi").click(function(){
+          var weight = document.getElementById('weight').value;
+          var height = document.getElementById('height').value;
+          height = height * 12;
+          height = height * 0.025; //now height is meter
+          var newbmivalue = weight / (height * height);
 
-		});
-
-	</script>
+          Math.round(newbmivalue);
+          alert(newbmivalue);
+          document.getElementById("#bmiresult").innerHTML = newbmivalue;
+    });
+  });
+  </script>
 
 </head>
 
 <body>
 
 <div class="container">
-    <h1 class="jumbotron text-center">Diabetic Cat Recipes</h1>
-	<p class="text-center">Enter the ingredients you have:</p>
+    <h1 class="jumbotron text-center">  Sugar Shield</h1>
+	<p class="text-center">Enter the following:</p>
 <form class="text-center">
     <br>
     <style>
@@ -70,23 +76,42 @@
   </div>
     <div class="form-group">
   <label> Height: </label>
-  <input type="number" name="" placeholder="Height in Ft" required id="height" class="form-control">
+  <input type="text" name="" placeholder="Height in Ft" required id="height" class="form-control">
   </div>
+  <div class="form-group">
+  <label> Number of Children: </label>
+  <input type="number" name="" placeholder="Number of Children" required id="Number of Children" class="form-control">
+  </div>
+  <div class="form-group">
+  <label> Glucose Level: </label>
+  <input type="number" name="" placeholder="0<=200" required id="Glucose Level" class="form-control">
+  </div>
+  <div class="form-group">
+  <label> Blood Pressure: </label>
+  <input type="number" name="" placeholder="0<=125" required id="Blood Pressure:" class="form-control">
+  </div>
+  <div class="form-group">
+  <label> Skin Thickness: </label>
+  <input type="number" name="" placeholder="0<=110" required id="Skin Thickness" class="form-control">
+  </div>
+  <div class="form-group">
+  <label> Insulin: </label>
+  <input type="number" name="" placeholder="0<=750" required id="Insulin" class="form-control">
+  </div>
+  <div class="form-group">
+  <label> Diabetes Pedigree: </label>
+  <input type="number" name="" placeholder="0<=2.5" required id="Insulin" class="form-control">
   </div>
     <div class="form-group">
   <label> BMI Result: </label>
-  <input type="number" name="" id="weight" class="form-control">
+  <p id="bmiresult"></p>
+  <!-- <input type="number" name="" id="weight" class="form-control"> -->
   </div>
-
-    <body>
     <div>
-      <button type="submit" class="btn btn-success"onclick="getbmivalue()">
-      Check BMI </button>
+      <button type="submit" class="btn btn-success" id="getbmi">  Check BMI </button>
     </div>
-
   </div>
   </div>
-    </body>
 </form>
 </form>
 <div class="class-footer text-center"> A healthy BMI ranges between 19 and 25. </div>
@@ -95,16 +120,7 @@
 </div>
 </body>
 
-<script>
-function getbmivalue(){
-      var weight = document.getElementById('weight').value;
-      var height = document.getElementById('height').value;
-      height = height * 12;
-      height = height * 0.025; //now height is meter
-      var newbmivalue = weight / (height * height);
-      document.getElementById('bmivalue').value = newbmivalue;
 
-
-}
-</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
 </html>
