@@ -22,39 +22,7 @@
 	if (typeof jQuery == 'undefined') {
 	document.write(unescape("%3Cscript src='jquery-3.2.1.js' type='text/javascript'%3E%3C/script%3E")); }
 	</script>
-  <style>
-  .center {
-   display: block;
-   margin-left: auto;
-   margin-right: auto;
 
-  }
-
-  body {
-
-      background-image: url("healthy-life-banner.jpg");
-
-  }
-
-  #jumbo {
-    style="background-image: url(sugarshield.jpg);"
-
-  }
-
-  .btn {
-    background-color: #f4511e;
-    border: none;
-    color: white;
-    padding: 16px 32px;
-    text-align: center;
-    font-size: 16px;
-    margin: 4px 2px;
-    opacity: 0.6;
-    transition: 0.3s;
-  }
-
-  .btn:hover {opacity: 1}
-  </style>
 
 	<!-- The document.ready script needs to be in its on <script> each method called from document needs to have the function() within it -->
   <script>
@@ -77,11 +45,31 @@ $( document ).ready(function() {
 
 <body>
 <div class="container">
-    <h1 class="jumbotron center" style="background-image: url(sugarshield.jpg); background-size: 50%; background-repeat: repeat-y; background-size: contain; background-position: center;"></h1>
-    <h2 class="text-center text-white"> Taking the firest step</h2>
+    <h1 class="jumbotron text-center">  Sugar Shield</h1>
+	<p class="text-center">Enter the following:</p>
 <form class="text-center">
     <br>
+    <style>
+    body {
 
+        background-image: url("healthy-life-banner.jpg");
+
+    }
+
+    .btn {
+      background-color: #f4511e;
+      border: none;
+      color: white;
+      padding: 16px 32px;
+      text-align: center;
+      font-size: 16px;
+      margin: 4px 2px;
+      opacity: 0.6;
+      transition: 0.3s;
+    }
+
+    .btn:hover {opacity: 1}
+    </style>
     </head>
 
     <div class = "card">
@@ -120,18 +108,18 @@ $( document ).ready(function() {
   <input type="number" name="" placeholder="0<=2.5" required id="Insulin" class="form-control">
   </div>
     <div class="form-group">
-  <!-- <label> BMI Result: </label>
-  <p id="bmiresult"></p> -->
+  <label> BMI Result: </label>
+  <p id="bmiresult"></p>
   <!-- <input type="number" name="" id="weight" class="form-control"> -->
   </div>
     <div>
-      <button type="submit" class="btn btn-success" id="getbmi">  Submit </button>
+      <button type="submit" class="btn btn-success" id="getbmi">  Check BMI </button>
     </div>
   </div>
   </div>
 </form>
 </form>
-<div class = "class-footer text-center text-white"> <h2> A healthy BMI ranges between 19 and 25. <h2></div>
+<div class="class-footer text-center"> A healthy BMI ranges between 19 and 25. </div>
 
 
 </div>
