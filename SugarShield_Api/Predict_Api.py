@@ -1,7 +1,7 @@
 #Ardalan Ahanchi
 #Machine Learning Prediction
 
-PORT = 57575
+PORT = 5000
 
 #Filter out the warnings from the terminal output.
 import warnings
@@ -12,6 +12,7 @@ import pandas as pd
 import numpy as np
 import flask
 from flask import request, jsonify
+from flask_cors import CORS
 from sklearn.preprocessing import MultiLabelBinarizer
 from sklearn.metrics import classification_report,confusion_matrix
 from sklearn.model_selection import train_test_split
@@ -21,6 +22,7 @@ from sklearn.decomposition import PCA
 
 #Setup flask.
 app = flask.Flask(__name__)
+CORS(app)
 #app.config["DEBUG"] = True
 app.trained_model = None
 

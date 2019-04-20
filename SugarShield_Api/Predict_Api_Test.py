@@ -1,7 +1,7 @@
 import requests
 import json
 
-PORT = 57575
+PORT = 5000
 URL = "http://127.0.0.1:"
 
 try:                                                                            #Create a json file for the server.
