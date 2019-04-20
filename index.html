@@ -96,10 +96,15 @@
 </body>
 
 <script>
-    function getbmivalue(){
-    var weight = document.getElementById('weight').value;
-    var height = document.getElementById('height').value;
+function getbmivalue(){
+      var weight = document.getElementById('weight').value;
+      var height = document.getElementById('height').value;
+      height = height * 12;
+      height = height * 0.025; //now height is meter
+      var newbmivalue = weight / (height * height);
+      document.getElementById('bmivalue').value = newbmivalue;
 
-  }
+
+}
 </script>
 </html>
