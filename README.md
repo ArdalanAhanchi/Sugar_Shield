@@ -1,15 +1,7 @@
-Sugar Shield is a machine learning software that aids medical sectors to detect if patients are Type1 or Type2 Diabetes.
-There are placeholders for each data input, automatically calculates the BMI of an individual, then all the information keyed 
-in will use JSON to transmit data to a server hosted on Amazon Web Services.
+Sugar shield is a web application that uses a machine learning algorithm to detect whether a patient is diagnosed with Type 1 or Type 2 diabetes. Attributes taken into consideration are: age, weight, height, blood pressure, insulin/glucose level, skin thickness, number of pregnancies and diabetes pedigree.
+
+Technologies include: Javascript, CSS+HTML5, JSON, jQuery, Bootstrap4, Python, Git&GitHub, and Flask.
+
+Team Members: Chelsea Ip, Ardalan Ahanchi, Edmund Chan, Kayla and Marcela Gomez.
 
 
-Team Members:
-Chelsea Ip
-Ardi
-Kayla
-Marcela
-Edmund
-
-Programming Languages: Python (Back-end), Javascript/HTML5+CSS (Front-end)
-Other Technologies: Bootstrap4, jQuery, JSON, Flask
-IDE : Atom
